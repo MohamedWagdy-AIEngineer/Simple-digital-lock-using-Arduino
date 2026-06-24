@@ -62,3 +62,28 @@ The firmware has been engineered from scratch to move away from rigid, fixed-len
    * **Correct Password:** Green LED lights up, access melody plays, and the Servo turns to `5°` (Unlocked) for a 10-second countdown before automatically returning to `85°` (Locked).
    * **Incorrect Password:** Red LED flashes, a warning sound plays, and `invalidCount` increments. Reaching 3 failures triggers the `SYSTEM LOCKED` state.
 
+---
+
+##  Planned Improvements
+
+### Permanent Alarm Mode (Anti-Intrusion Enhancement)
+
+A key security upgrade currently in development:
+
+**Current Behavior:**
+- After **3 consecutive wrong attempts**, the system triggers a 10-second
+  audio-visual alarm countdown, then automatically resets and accepts input again.
+- If the user fails **3 more times** after the reset, the cycle simply repeats.
+
+**Planned Behavior:**
+- First 3 wrong attempts → 10-second lockout countdown (unchanged).
+- If the user fails **3 additional times** after the first lockout:
+  * 🔴 Red LED and Buzzer activate **permanently** with no timer or auto-reset.
+  * 🖥️ LCD displays a prompt to enter the **Master Password**.
+  * 🔑 The **only way** to silence the alarm and restore the system
+    is a correct Master Password entry.
+
+**Security Rationale:** This two-tier lockout ensures that a brief alarm
+is enough warning for a genuine mistake, but a persistent intruder triggers
+a permanent alarm that requires physical administrative intervention to resolve.
+
