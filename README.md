@@ -25,7 +25,7 @@ The firmware has been engineered from scratch to move away from rigid, fixed-len
 
 ## ⚙️ Hardware Components
 
-* **Microcontroller:** Arduino Uno (or compatible board)
+* **Microcontroller:** Arduino Nano
 * **Input:** 4x4 Matrix Keypad
 * **Display:** 16x2 Character LCD
 * **Actuator:** Servo Motor
